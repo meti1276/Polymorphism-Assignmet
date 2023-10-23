@@ -1,0 +1,31 @@
+using System;
+
+// Define an interface called IQuittable with the Quit() method.
+public interface IQuittable
+{
+    void Quit();
+}
+
+// Create an Employee class that inherits the IQuittable interface.
+public class Employee : IQuittable
+{
+    // Implement the Quit() method from the IQuittable interface.
+    public void Quit()
+    {
+        Console.WriteLine("Employee is quitting the job.");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Create an object of type IQuittable using polymorphism.
+        // An Employee object is assigned to a variable of type IQuittable.
+        IQuittable quittableObject = new Employee();
+
+        // Call the Quit() method on the quittableObject.
+        // Since quittableObject is of type IQuittable, it calls the Quit() method defined in the Employee class.
+        quittableObject.Quit();
+    }
+}
